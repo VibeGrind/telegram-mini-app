@@ -16,11 +16,6 @@ interface SettingsProps {
 }
 
 export default function Settings({ isOpen, onClose }: SettingsProps) {
-  const [notifications, setNotifications] = useState(true)
-  const [notificationSound, setNotificationSound] = useState(true)
-  const [notificationVibrate, setNotificationVibrate] = useState(true)
-  const [messagePreview, setMessagePreview] = useState(true)
-
   const [autoPlayMedia, setAutoPlayMedia] = useState(true)
   const [autoDownloadPhotos, setAutoDownloadPhotos] = useState(true)
   const [autoDownloadVideos, setAutoDownloadVideos] = useState(false)
@@ -87,65 +82,6 @@ export default function Settings({ isOpen, onClose }: SettingsProps) {
         </div>
       <div className="settings">
         <List>
-          {/* Notifications */}
-          <Section header="Уведомления">
-            <Cell
-              Component="label"
-              before={<span className="settings-icon">🔔</span>}
-              after={
-                <Switch
-                  checked={notifications}
-                  onChange={(e) => setNotifications(e.target.checked)}
-                />
-              }
-            >
-              <div className="settings-cell-content">
-                <div>Уведомления</div>
-                <Caption level="2">Получать уведомления о новых сообщениях</Caption>
-              </div>
-            </Cell>
-            {notifications && (
-              <>
-                <Cell
-                  Component="label"
-                  before={<span className="settings-icon">🔊</span>}
-                  after={
-                    <Switch
-                      checked={notificationSound}
-                      onChange={(e) => setNotificationSound(e.target.checked)}
-                    />
-                  }
-                >
-                  Звук уведомлений
-                </Cell>
-                <Cell
-                  Component="label"
-                  before={<span className="settings-icon">📳</span>}
-                  after={
-                    <Switch
-                      checked={notificationVibrate}
-                      onChange={(e) => setNotificationVibrate(e.target.checked)}
-                    />
-                  }
-                >
-                  Вибрация
-                </Cell>
-                <Cell
-                  Component="label"
-                  before={<span className="settings-icon">👁️</span>}
-                  after={
-                    <Switch
-                      checked={messagePreview}
-                      onChange={(e) => setMessagePreview(e.target.checked)}
-                    />
-                  }
-                >
-                  Предпросмотр сообщений
-                </Cell>
-              </>
-            )}
-          </Section>
-
           {/* Privacy */}
           <Section header="Конфиденциальность">
             <Cell
