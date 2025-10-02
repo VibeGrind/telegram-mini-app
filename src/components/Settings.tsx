@@ -22,7 +22,6 @@ export default function Settings({ isOpen, onClose }: SettingsProps) {
 
   const [enterToSend, setEnterToSend] = useState(true)
   const [showOnlineStatus, setShowOnlineStatus] = useState(true)
-  const [readReceipts, setReadReceipts] = useState(true)
 
   useEffect(() => {
     if (isOpen) {
@@ -94,43 +93,7 @@ export default function Settings({ isOpen, onClose }: SettingsProps) {
                 />
               }
             >
-              <div className="settings-cell-content">
-                <div>Показывать статус "онлайн"</div>
-                <Caption level="2">Другие пользователи увидят когда вы онлайн</Caption>
-              </div>
-            </Cell>
-            <Cell
-              Component="label"
-              before={<span className="settings-icon">✓</span>}
-              after={
-                <Switch
-                  checked={readReceipts}
-                  onChange={(e) => setReadReceipts(e.target.checked)}
-                />
-              }
-            >
-              <div className="settings-cell-content">
-                <div>Отметки о прочтении</div>
-                <Caption level="2">Отправлять отметки о прочтении сообщений</Caption>
-              </div>
-            </Cell>
-            <Cell
-              before={<span className="settings-icon">🔒</span>}
-              after={<span className="settings-chevron">›</span>}
-            >
-              Последнее посещение
-            </Cell>
-            <Cell
-              before={<span className="settings-icon">📱</span>}
-              after={<span className="settings-chevron">›</span>}
-            >
-              Номер телефона
-            </Cell>
-            <Cell
-              before={<span className="settings-icon">📷</span>}
-              after={<span className="settings-chevron">›</span>}
-            >
-              Фото профиля
+              Статус "Онлайн"
             </Cell>
           </Section>
 
