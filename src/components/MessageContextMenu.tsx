@@ -17,7 +17,6 @@ interface MessageContextMenuProps {
 export default function MessageContextMenu({
   isOpen,
   onClose,
-  message,
   isOwn,
   onReply,
   onEdit,
