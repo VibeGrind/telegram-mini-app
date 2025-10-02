@@ -1,15 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import {
   List,
   Section,
   Cell,
   Avatar,
   Title,
-  Text,
   Caption,
-  Switch,
 } from '@telegram-apps/telegram-ui'
-import { useTheme } from '../App'
 import { User } from '../types'
 import './Sidebar.css'
 
@@ -21,8 +18,6 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ isOpen, onClose, currentUser, onOpenSettings }: SidebarProps) {
-  const { appearance, setAppearance } = useTheme()
-  const [notifications, setNotifications] = useState(true)
 
   useEffect(() => {
     if (isOpen) {
@@ -119,30 +114,6 @@ export default function Sidebar({ isOpen, onClose, currentUser, onOpenSettings }
               }}
             >
               Настройки
-            </Cell>
-            <Cell
-              Component="label"
-              before={<span className="sidebar-icon">🌙</span>}
-              after={
-                <Switch
-                  checked={appearance === 'dark'}
-                  onChange={(e) => setAppearance(e.target.checked ? 'dark' : 'light')}
-                />
-              }
-            >
-              Тёмная тема
-            </Cell>
-            <Cell
-              Component="label"
-              before={<span className="sidebar-icon">🔔</span>}
-              after={
-                <Switch
-                  checked={notifications}
-                  onChange={(e) => setNotifications(e.target.checked)}
-                />
-              }
-            >
-              Уведомления
             </Cell>
           </Section>
 

@@ -8,7 +8,6 @@ import {
   Caption,
   IconButton,
 } from '@telegram-apps/telegram-ui'
-import { useTheme } from '../App'
 import './Settings.css'
 
 interface SettingsProps {
@@ -17,7 +16,6 @@ interface SettingsProps {
 }
 
 export default function Settings({ isOpen, onClose }: SettingsProps) {
-  const { appearance, setAppearance } = useTheme()
   const [notifications, setNotifications] = useState(true)
   const [notificationSound, setNotificationSound] = useState(true)
   const [notificationVibrate, setNotificationVibrate] = useState(true)
@@ -252,42 +250,6 @@ export default function Settings({ isOpen, onClose }: SettingsProps) {
             </Cell>
           </Section>
 
-          {/* Appearance */}
-          <Section header="Оформление">
-            <Cell
-              Component="label"
-              before={<span className="settings-icon">🌙</span>}
-              after={
-                <Switch
-                  checked={appearance === 'dark'}
-                  onChange={(e) => setAppearance(e.target.checked ? 'dark' : 'light')}
-                />
-              }
-            >
-              <div className="settings-cell-content">
-                <div>Тёмная тема</div>
-                <Caption level="2">Использовать тёмное оформление</Caption>
-              </div>
-            </Cell>
-            <Cell
-              before={<span className="settings-icon">🎨</span>}
-              after={<span className="settings-chevron">›</span>}
-            >
-              Цветовая схема
-            </Cell>
-            <Cell
-              before={<span className="settings-icon">🖼️</span>}
-              after={<span className="settings-chevron">›</span>}
-            >
-              Фон чата
-            </Cell>
-            <Cell
-              before={<span className="settings-icon">🔤</span>}
-              after={<span className="settings-chevron">›</span>}
-            >
-              Размер шрифта
-            </Cell>
-          </Section>
 
           {/* Chat Behavior */}
           <Section header="Поведение чатов">
