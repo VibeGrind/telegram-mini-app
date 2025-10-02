@@ -17,13 +17,7 @@ export default function SettingsPage() {
   const [language, setLanguage] = useState('ru')
 
   const handleSave = () => {
-    if (window.Telegram?.WebApp?.showPopup) {
-      window.Telegram.WebApp.showPopup({
-        message: 'Настройки сохранены!'
-      })
-    } else {
-      alert('Настройки сохранены!')
-    }
+    alert('Настройки сохранены!')
   }
 
   return (

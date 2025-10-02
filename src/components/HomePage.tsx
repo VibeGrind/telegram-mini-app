@@ -21,13 +21,7 @@ export default function HomePage() {
   const [username, setUsername] = useState('')
 
   const handleShowAlert = () => {
-    if (window.Telegram?.WebApp?.showPopup) {
-      window.Telegram.WebApp.showPopup({
-        message: 'Привет из Telegram Mini App! 👋'
-      })
-    } else {
-      alert('Привет из Telegram Mini App! 👋')
-    }
+    alert('Привет из Telegram Mini App! 👋')
   }
 
   const user = window.Telegram?.WebApp?.initDataUnsafe?.user
