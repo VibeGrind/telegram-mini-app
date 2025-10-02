@@ -61,7 +61,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ appearance, setAppearance: handleSetAppearance }}>
-      <AppRoot platform={platform} appearance={appearance}>
+      <AppRoot platform={platform === 'android' ? 'base' : platform} appearance={appearance}>
         <BrowserRouter
           future={{
             v7_startTransition: true,

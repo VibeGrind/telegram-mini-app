@@ -37,7 +37,7 @@ export default function HomePage() {
         <Cell
           before={
             <Avatar
-              size={64}
+              size={48}
               acronym={user?.first_name?.[0] || 'U'}
             />
           }

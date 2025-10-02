@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Avatar, Title, Caption, Input, IconButton, Button } from '@telegram-apps/telegram-ui'
+import { Title, Caption, IconButton } from '@telegram-apps/telegram-ui'
 import { Chat, Message as MessageType } from '../types'
 import Message from './Message'
 import MessageContextMenu from './MessageContextMenu'
@@ -33,7 +33,7 @@ export default function ChatWindow({
   const [typing, setTyping] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
   const messagesEndRef = useRef<HTMLDivElement>(null)
-  const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const typingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const handleResize = () => {

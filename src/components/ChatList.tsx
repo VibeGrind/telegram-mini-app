@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Cell, Avatar, Badge, Input, IconButton, Title } from '@telegram-apps/telegram-ui'
+import { Cell, Avatar, Badge, Input, IconButton } from '@telegram-apps/telegram-ui'
 import { Chat } from '../types'
 import './ChatList.css'
 

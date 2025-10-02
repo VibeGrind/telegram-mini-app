@@ -8,7 +8,6 @@ import {
   Text,
   Caption,
   Switch,
-  Button,
 } from '@telegram-apps/telegram-ui'
 import { useTheme } from '../App'
 import { User } from '../types'
@@ -72,7 +71,7 @@ export default function Sidebar({ isOpen, onClose, currentUser, onOpenSettings }
         {/* User Profile */}
         <div className="sidebar-profile">
           <Avatar
-            size={80}
+            size={96}
             acronym={currentUser.firstName[0]}
           />
           <Title level="2">{currentUser.firstName} {currentUser.lastName}</Title>

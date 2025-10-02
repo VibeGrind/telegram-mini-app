@@ -6,7 +6,6 @@ import {
   Switch,
   Title,
   Caption,
-  Button,
   IconButton,
 } from '@telegram-apps/telegram-ui'
 import { useTheme } from '../App'
