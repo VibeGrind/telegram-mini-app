@@ -137,7 +137,7 @@ export default function Sidebar({ isOpen, onClose, currentUser, onOpenSettings }
               before={<span className="sidebar-icon">📱</span>}
             >
               <div className="sidebar-version">
-                <Text>Telegram Web</Text>
+                <div>Telegram Web</div>
                 <Caption level="2">Version 1.0.0</Caption>
               </div>
             </Cell>
